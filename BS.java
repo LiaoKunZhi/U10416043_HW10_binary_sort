@@ -9,7 +9,7 @@ public class BS {
 	public BS (Object o) {
 		root = new Node(o);
 	}
-	
+
 	//Insert the numbers to the node
 	public Node Insert (Node node, int o) {
 
@@ -24,5 +24,15 @@ public class BS {
 			node.right = Insert(node.right, o);
 		}
 		return node;
+	}
+
+	//Inorder
+	public void inOrder(Node node) {
+
+		if (node != null) {
+			inOrder(node.left);
+			System.out.print(((Integer) node.element).intValue() + " ");
+			inOrder(node.right);
+  		}
 	}
 }
